@@ -99,7 +99,7 @@ int result_screen(int playmod, int number, bool result, int turn, int time_sec) 
     printf("정답 %d\n\n", number);
 
     // 턴
-    printf("%d턴\n\n", turn);
+    printf("턴 %d\n\n", turn);
 
     // 시간
     if (time_sec >= 3600)
