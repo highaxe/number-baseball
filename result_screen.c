@@ -1,8 +1,18 @@
 #include <stdio.h>
-#define YELLOW "\x1b[38;2;250;250;70m"
-#define RED "\x1b[38;2;250;70;70m"
-#define GRAY "\033[90m"
-#define RESET "\033[0m"
+
+// 글자 색깔
+#ifndef YELLOW
+    #define YELLOW "\x1b[38;2;250;250;70m"
+#endif
+#ifndef RED
+    #define RED "\x1b[38;2;250;70;70m"
+#endif
+#ifndef GRAY
+    #define GRAY "\033[90m"
+#endif
+#ifndef RESET
+    #define RESET "\033[0m"
+#endif
 
 /* 함수 인자
 - int playmod
