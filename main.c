@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <windows.h>
 #include "menu.c"
+#include "result_screen.c"
 
 int main() {
 	
