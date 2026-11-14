@@ -10,6 +10,9 @@
 2 - 컴퓨터 대전 모드
 3 - 턴 제한 모드
 
+- int number
+정답 숫자
+
 - bool result
 0 - 패배/실패
 1 - 승리/성공
@@ -33,6 +36,8 @@
 
 싱글 플레이 모드
 
+정답: 345
+
 10턴
 
 3분 30초
@@ -41,7 +46,7 @@
 ------------------------------
 
 */
-int result_screen(int playmod, bool result, int turn, int time_sec) {
+int result_screen(int playmod, int number, bool result, int turn, int time_sec) {
 
 
     printf("------------------------------\n");
@@ -79,6 +84,9 @@ int result_screen(int playmod, bool result, int turn, int time_sec) {
         printf(RED "유효하지 않은 playmod 변수값\n" RESET);
         return 1;
     }
+
+    // 정답 숫자
+    printf("정답 %d\n\n", number);
 
     // 턴
     printf("%d턴\n\n", turn);
