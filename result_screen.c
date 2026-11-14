@@ -1,10 +1,17 @@
 #include <stdio.h>
+#define YELLOW "\x1b[38;2;250;250;70m"
+#define RED "\x1b[38;2;250;70;70m"
+#define GRAY "\033[90m"
+#define RESET "\033[0m"
 
 /* 함수 인자
 - int playmod
 1 - 싱글 플레이 모드
 2 - 컴퓨터 대전 모드
 3 - 턴 제한 모드
+
+- int number
+정답 숫자
 
 - bool result
 0 - 패배/실패
@@ -29,6 +36,8 @@
 
 싱글 플레이 모드
 
+정답 345
+
 10턴
 
 3분 30초
@@ -37,25 +46,25 @@
 ------------------------------
 
 */
-int result_screen(int playmod, bool result, int turn, int time_sec) {
+int result_screen(int playmod, int number, bool result, int turn, int time_sec) {
 
 
-    printf("------------------------------\n");
+    printf(GRAY "------------------------------\n" RESET);
     
     // 싱글 플레이 모드
     if (playmod == 1) {
-        printf("[성공]\n\n");
+        printf("[" YELLOW "성공" RESET "]\n\n");
         printf("싱글 플레이 모드\n\n");
     }
     // 컴퓨터 대전 모드
     else if (playmod == 2) {
         // 승리
         if (result == 1) {
-            printf("[승리]\n\n");
+            printf("[" YELLOW "승리" RESET "]\n\n");
         }
         // 패배
         else {
-            printf("[패배]\n\n");
+            printf("[" RED "패배" RESET "]\n\n");
         }
         printf("컴퓨터 대전 모드\n\n");
     }
@@ -63,18 +72,21 @@ int result_screen(int playmod, bool result, int turn, int time_sec) {
     else if (playmod == 3) {
         // 성공
         if (result == 1) {
-            printf("[성공]\n\n");
+            printf("[" YELLOW "성공" RESET "]\n\n");
         }
         // 실패
         else {
-            printf("[실패]\n\n");
+            printf("[" RED "실패" RESET "]\n\n");
         }
         printf("턴 제한 모드\n\n");
     }
     else {
-        printf("유효하지 않은 playmod 변수값\n");
+        printf(RED "유효하지 않은 playmod 변수값\n" RESET);
         return 1;
     }
+
+    // 정답 숫자
+    printf("정답 %d\n\n", number);
 
     // 턴
     printf("%d턴\n\n", turn);
@@ -87,7 +99,7 @@ int result_screen(int playmod, bool result, int turn, int time_sec) {
     printf("%d초\n\n", time_sec % 60);
 
     printf("[Enter] 메뉴로 돌아가기\n");
-    printf("------------------------------\n");
+    printf(GRAY "------------------------------\n" RESET);
 
     // Enter 입력
     while (getchar() != '\n');
