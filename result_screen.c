@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define YELLOW "\x1b[38;2;250;250;70m"
-#define GRAY "\x1b[38;2;250;250;70m"
 #define RED "\x1b[38;2;250;70;70m"
+#define GRAY "\033[90m"
 #define RESET "\033[0m"
 
 /* 함수 인자
@@ -36,7 +36,7 @@
 
 싱글 플레이 모드
 
-정답: 345
+정답 345
 
 10턴
 
@@ -49,7 +49,7 @@
 int result_screen(int playmod, int number, bool result, int turn, int time_sec) {
 
 
-    printf("------------------------------\n");
+    printf(GRAY "------------------------------\n" RESET);
     
     // 싱글 플레이 모드
     if (playmod == 1) {
@@ -99,7 +99,7 @@ int result_screen(int playmod, int number, bool result, int turn, int time_sec) 
     printf("%d초\n\n", time_sec % 60);
 
     printf("[Enter] 메뉴로 돌아가기\n");
-    printf("------------------------------\n");
+    printf(GRAY "------------------------------\n" RESET);
 
     // Enter 입력
     while (getchar() != '\n');
