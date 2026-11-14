@@ -105,7 +105,7 @@ void print_history(char* data) {
     time_t t = (time_t)l_time;
     struct tm* tm_end = localtime(&t);
 
-    printf("%d/%d/%d ", tm_end->tm_year - 100, tm_end->tm_mon, tm_end->tm_mday);
+    printf("%d/%d/%d ", tm_end->tm_year - 100, tm_end->tm_mon + 1, tm_end->tm_mday);
     
     // 싱글 플레이 모드
     if (playmod == 1) {
