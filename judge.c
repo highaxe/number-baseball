@@ -78,11 +78,10 @@ bool judge(int answer, int guess, int* strike, int* ball, bool print_judge) {   
     }
     
     if (print_judge) {                      // 판단을 출력해야하는 상황인지 조건문
-        if(s_cnt == number_digit){          // 자릿수와 스트라이크 수가 동일하다면 홈런 출력
-            printf("HOMERUN\n");
-        }else if (s_cnt == 0 && b_cnt == 0) {     // 스트라이크와 볼의 수가 모두 0이면 아웃 출력
+        if (s_cnt == 0 && b_cnt == 0) {     // 스트라이크와 볼의 수가 모두 0이면 아웃 출력
             printf("OUT\n");
         } else {
+            
             if(hide_strike){
                 printf("?S ");      // hide_strike가 true이면 ?S로 출력
             }else{
