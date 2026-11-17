@@ -74,15 +74,9 @@ bool judge(int answer, int guess, int* strike, int* ball, bool print_judge) {   
                     b_cnt++;
                 }
             }
-        }
-            
-
-
-        }
-
-
-
+       }         
     }
+    
 
 
 
