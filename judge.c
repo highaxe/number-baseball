@@ -35,7 +35,7 @@ int* strike
 int* ball
 계산된 볼 개수를 저장할 변수의 주소, 함수는 한 개의 return만 반환하기에 포인터 사용
 
-bool print_judge
+bool print_judge        // 지금 이 판정 결과를 사용자 화면에 띄워줘야 하는 상황인가?에서 띄워주는 상황엔 True, 그렇지 않은 상황엔 False
 false - 화면 출력 안 함 (컴퓨터 AI 내부 추론 계산용)
 true  - 판정 결과를 화면에 출력함 (hide_strike, hide_ball 옵션 반영)
 */
@@ -77,6 +77,27 @@ bool judge(int answer, int guess, int* strike, int* ball, bool print_judge) {   
        }         
     }
     
+    if (print_judge) {                      // 판단을 출력해야하는 상황인지 조건문
+        if(s_cnt == number_digit){          // 자릿수와 스트라이크 수가 동일하다면 홈런 출력
+            printf("HOMERUN\n");
+        }else if (s_cnt == 0 && b_cnt == 0) {     // 스트라이크와 볼의 수가 모두 0이면 아웃 출력
+            printf("OUT\n");
+        } else {
+            if(hide_strike){
+                printf("?S ");      // hide_strike가 true이면 ?S로 출력
+            }else{
+                printf("%dS ",s_cnt);
+            }
+            
+            if(hide_ball){
+                printf("?B ");              // hide_ball이 true이면 ?B로 출력
+            } else{
+                printf("%dB ",b_cnt);
+            }
+        }
+
+
+    }
 
 
 
