@@ -30,10 +30,10 @@ int guess;
 플레이어or컴퓨터가 입력한 추측 숫자 (예를 들어 345)
 
 int* strike
-계산된 스트라이크 개수를 저장할 변수의 주소 
+계산된 스트라이크 개수를 저장할 변수의 주소, 함수는 한 개의 return만 반환하기에 포인터 사용
 
 int* ball
-계산된 볼 개수를 저장할 변수의 주소 
+계산된 볼 개수를 저장할 변수의 주소, 함수는 한 개의 return만 반환하기에 포인터 사용
 
 bool print_judge
 false - 화면 출력 안 함 (컴퓨터 AI 내부 추론 계산용)
@@ -61,6 +61,33 @@ bool judge(int answer, int guess, int* strike, int* ball, bool print_judge) {   
         guess_arr[i] = temp_guess % 10;
         temp_guess = temp_guess / 10;
     }
+
+    int s_cnt = 0;
+    int b_cnt = 0;
+
+    for (int i = 0; i < number_digit; i++) {
+       for (int j = 0; j < number_digit; j++) {
+            if (guess_arr[i] == ans_arr[j]) {
+                if (i == j) {
+                    s_cnt++;
+                } else {
+                    b_cnt++;
+                }
+            }
+        }
+            
+
+
+        }
+
+
+
+    }
+
+
+
+
+
 
 
     return false;
