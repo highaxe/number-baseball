@@ -3,6 +3,13 @@
 #include<time.h>
 
 void generate_answer(int n, int answer[]) {
+    static int initialized = 0;
+
+    if(initialized==0) {
+        srand((unsigned int)time(NULL));
+        initialized=1;
+    }
+
     int numbers[9]= {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
     for(int i=8;i>0;i--) {
