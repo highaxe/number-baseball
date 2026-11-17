@@ -2,9 +2,11 @@
 #include <windows.h>
 #include "menu.c"
 #include "result_screen.c"
+#include "judge.c"
 
 int main() {
 	
+
 	// 한글 깨짐 제거
 	SetConsoleOutputCP(CP_UTF8);
 	
