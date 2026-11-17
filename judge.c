@@ -84,7 +84,7 @@ bool judge(int answer, int guess, int* strike, int* ball, bool print_judge) {   
 
 
 
-    return false;
+    return (s_cnt == number_digit);
 }
 
 
