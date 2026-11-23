@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "game_option.h"
+#include <stdbool.h>
 
 int number_digit = 3;
 bool hide_ball = false;
