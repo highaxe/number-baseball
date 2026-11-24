@@ -17,7 +17,7 @@
     #define RESET "\033[0m"
 #endif
 
-//menu.c에 선언된 변수를 가져오기
+//game_option.c에 선언된 변수를 가져오기
 extern int number_digit;
 extern bool hide_ball;
 extern bool hide_strike;
