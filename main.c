@@ -10,7 +10,7 @@
 #include "input_validation.c"
 #include "save_history.c"
 #include "turn_limit.c"
-
+#include "show_history.c"
 
 int main() {
 	
