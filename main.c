@@ -9,6 +9,8 @@
 #include "game_quit.c"
 #include "input_validation.c"
 #include "save_history.c"
+#include "turn_limit.c"
+
 
 int main() {
 	
