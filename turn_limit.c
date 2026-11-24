@@ -11,6 +11,7 @@ extern int number_digit;
 void generate_answer(int n, int answer[]);
 bool judge(int answer, int guess, int* strike, int* ball, bool print_judge);
 int result_screen(int playmod, int number, bool result, int turn, int time_sec);
+int save_history(time_t end_time, int playmod, int number, bool result, int turn, int time_sec);
 
 void turn_limit_mode(void) {
 
@@ -69,7 +70,11 @@ void turn_limit_mode(void) {
     }
 
     // 플레이 시간
-    int time_sec = (int)difftime(time(NULL), start_time);
+    int end_time = time(NULL);
+    int time_sec = (int)difftime(end_time, start_time);
+
+    // 결과 저장
+    save_history(end_time, 3, answer, correct, turns_used, time_sec);
 
     // 결과 화면
     result_screen(3, answer, correct, turns_used, time_sec);
