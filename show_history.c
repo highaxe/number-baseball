@@ -115,7 +115,7 @@ void print_history(char* data) {
 
     // 날짜와 시간
     printf("%d/%d/%d ", tm_end->tm_year - 100, tm_end->tm_mon + 1, tm_end->tm_mday);
-    printf("%d:%d ", tm_end->tm_hour, tm_end->tm_min);
+    printf("%d:%02d ", tm_end->tm_hour, tm_end->tm_min);
     // 싱글 플레이 모드
     if (playmod == 1) {
         printf("싱글 플레이 모드 ");
@@ -147,7 +147,7 @@ void print_history(char* data) {
     if (time_sec >= 3600)
         printf("%d:", time_sec / 3600);
     printf("%d:", (time_sec % 3600) / 60);
-    printf("%d ", time_sec % 60);
+    printf("%02d ", time_sec % 60);
 
     // 정답
     printf("정답 %d ", number);
