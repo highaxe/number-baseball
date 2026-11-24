@@ -16,7 +16,6 @@ void turn_limit_mode(void) {
 
     int answer_arr[4];
     int answer = 0;
-    int guess;
     int strike, ball;
     int turns_used = 0;
     bool correct = false;
