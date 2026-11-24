@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+void single_play_mode(void);
+
 void menu(){
     char input[20];
 
@@ -29,6 +31,7 @@ void menu(){
         //번호에 따른 함수 호출
         if(strcmp(input, "1") == 0){
             //싱글플레이 함수 호출
+            single_play_mode();
         } else if(strcmp(input, "2") == 0){
             //컴퓨터대전 함수 호출
         } else if(strcmp(input, "3") == 0){
