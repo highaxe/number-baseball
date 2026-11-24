@@ -4,6 +4,7 @@
 
 void single_play_mode(void);
 void turn_limit_mode(void);
+void game_option(void);
 
 void menu(){
     char input[20];
@@ -41,6 +42,7 @@ void menu(){
             //전적조회 함수 호출
         } else if(strcmp(input, "5") == 0){
             //옵션 함수 호출
+            game_option();
         } else{
             //그 밖의 값
             printf("잘못된 입력입니다. 올바른 메뉴 번호를 입력해주세요.\n");
