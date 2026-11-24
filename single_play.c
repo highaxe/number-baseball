@@ -15,15 +15,12 @@ int result_screen(int playmod, int number, bool result, int turn, int time_sec);
 int save_history(time_t end_time, int playmod, int number, bool result, int turn, int time_sec);
 
 void single_play_mode(void) {
-    int answer_arr[4] = {0};        //정답 숫자를 저장할 배열
+
     int answer = 0;                 //정답 숫자(정수형)
     int turn = 0;                   //게임 턴 수
     char input[20];                 //사용자 입력을 저장할 문자 배열
 
-    generate_answer(number_digit, answer_arr);  //정답 난수 생성(FR_003), 자릿수를 넣어 정답 배열에 랜덤으로 생성된 정답 숫자 받아옴.
-    for (int i = 0; i < number_digit; i++) {
-        answer = answer * 10 + answer_arr[i];
-    }                                           // 정답 배열에 있는 수를 정수로 변환, 예를 들어 [1, 2, 3, 4]이면 1234로 변환
+    generate_answer(number_digit, &answer);  //정답 난수 생성(FR_003)
 
     time_t start_time = time(NULL);   // 게임 시작 시각 기록
 
