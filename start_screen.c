@@ -3,6 +3,7 @@
 #include <string.h>
 
 void single_play_mode(void);
+void turn_limit_mode(void);
 
 void menu(){
     char input[20];
@@ -35,7 +36,7 @@ void menu(){
         } else if(strcmp(input, "2") == 0){
             //컴퓨터대전 함수 호출
         } else if(strcmp(input, "3") == 0){
-            //턴제한모드 함수 호출
+            turn_limit_mode();
         } else if(strcmp(input, "4") == 0){
             //전적조회 함수 호출
         } else if(strcmp(input, "5") == 0){
