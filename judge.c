@@ -76,6 +76,8 @@ bool judge(int answer, int guess, int* strike, int* ball, bool print_judge) {   
             }
        }         
     }
+    if (strike != NULL) *strike = s_cnt;
+    if (ball != NULL) *ball = b_cnt;
     
     if (print_judge) {                      // 판단을 출력해야하는 상황인지 조건문
         if (s_cnt == 0 && b_cnt == 0) {     // 스트라이크와 볼의 수가 모두 0이면 아웃 출력
