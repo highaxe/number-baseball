@@ -16,7 +16,6 @@ void turn_limit_mode(void) {
 
     int answer_arr[4];
     int answer = 0;
-    int strike, ball;
     int turns_used = 0;
     bool correct = false;
 
@@ -60,7 +59,7 @@ void turn_limit_mode(void) {
 
         // 판정
         int guess = atoi(input);
-        correct = judge(answer, guess, &strike, &ball, true);
+        correct = judge(answer, guess, NULL, NULL, true);
         printf("\n");
 
         // 정답
