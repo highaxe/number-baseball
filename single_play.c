@@ -64,10 +64,19 @@ void single_play_mode(void) {
         }
     }
 
-
+    // 루프 탈출 후(정답을 맞춘 경우) 게임 종료 처리
     
-    // [TODO: - 종료 시간 계산, 전적 저장 및 결과 화면 출력]
-         
+    time_t end_time = time(NULL);                           // 게임 종료 시각 기록
+    int time_sec = (int)difftime(end_time, start_time);     //플레이 타임 계산
+
+    // result_screen 내부 getchar()가 앞선 엔터키('\n')를 먹고 바로 넘어가는 현상 방지
+    int ch;
+    while ((ch = getchar()) != '\n' && ch != EOF);
+
+    // 전적 저장 및 결과 화면 출력
+    // playmod: 1 (싱글 플레이), result: true (승리)
+    save_history(end_time, 1, answer, true, turn, time_sec);
+    result_screen(1, answer, true, turn, time_sec); 
 
 
 
