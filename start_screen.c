@@ -24,13 +24,17 @@ void menu(){
         printf("메뉴를 선택하세요: ");
 
         if(scanf("%s", input)!=1)continue;
-
+        
         //6번이나 "exit" 입력 시 종료
         if(strcmp(input, "6") == 0 || strcmp(input, "exit") == 0){
             printf("프로그램을 종료합니다\n");
             break;
         }
 
+        // \n 제거
+        char ch;
+        while ((ch = getchar() != '\n') && ch != EOF);
+        
         //번호에 따른 함수 호출
         if(strcmp(input, "1") == 0){
             //싱글플레이

@@ -25,6 +25,9 @@ void print_history(char* data);
 
 int show_history() {
 
+
+    printf("\n\n");
+
     FILE* fp = fopen("game_history.txt", "r");
     if (fp == NULL) {
         printf("game_history.txt fopen fail in show_history.txt\n");
@@ -36,7 +39,7 @@ int show_history() {
     int line_count = 0;
     while (fgets(buffer, 1000, fp) != NULL) line_count++;
     rewind(fp);
-    
+
     if (line_count == 0) {
         printf(GRAY "------------------------------\n" RESET);
         printf("기록이 없습니다\n");
@@ -89,6 +92,11 @@ int show_history() {
     
 
     fclose(fp);
+
+    // Enter 입력
+    printf("[Enter] 메뉴로 돌아가기\n");
+    while (getchar() != '\n');
+
     return 0;
 }
 
@@ -105,8 +113,9 @@ void print_history(char* data) {
     time_t t = (time_t)l_time;
     struct tm* tm_end = localtime(&t);
 
+    // 날짜와 시간
     printf("%d/%d/%d ", tm_end->tm_year - 100, tm_end->tm_mon + 1, tm_end->tm_mday);
-    
+    printf("%d:%d ", tm_end->tm_hour, tm_end->tm_min);
     // 싱글 플레이 모드
     if (playmod == 1) {
         printf("싱글 플레이 모드 ");
