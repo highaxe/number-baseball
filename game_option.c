@@ -50,10 +50,20 @@ void game_option(void) {
             }
         }
         else if (choice == 2) {
-            hide_ball = !hide_ball;
+            if (hide_ball == false && hide_strike == true) {
+                printf("스트라이크와 볼을 동시에 숨길 수 없습니다.\n");
+            }
+            else {
+                hide_ball = !hide_ball;
+            }
         }
         else if (choice == 3) {
-            hide_strike = !hide_strike;
+            if (hide_ball == true && hide_strike == false) {
+                printf("스트라이크와 볼을 동시에 숨길 수 없습니다.\n");
+            }
+            else {
+                hide_strike = !hide_strike;
+            }
         }
         else {
             printf("잘못된 메뉴 번호입니다.\n");
