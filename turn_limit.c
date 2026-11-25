@@ -30,6 +30,10 @@ void turn_limit_mode(void) {
 
     // 턴
     while (turns_used < MAX_TURNS) {
+
+        // 디버그 모드 정답 표시
+        if (debug == true) printf("[디버그] 정답: %d\n", answer);
+        
         printf("\n남은 턴: %d\n", MAX_TURNS - turns_used);
         printf("%d자리 숫자 입력: ", number_digit);
 

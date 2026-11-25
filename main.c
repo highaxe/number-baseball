@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include <windows.h>
 #include "start_screen.c"
 #include "result_screen.c"
@@ -12,12 +13,15 @@
 #include "turn_limit.c"
 #include "show_history.c"
 
+bool debug = false;
+
 int main() {
 	
 
 	// 한글 깨짐 제거
 	SetConsoleOutputCP(CP_UTF8);
 	
+
 	menu();
 
 	return 0;

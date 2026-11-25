@@ -28,6 +28,10 @@ void single_play_mode(void) {
     printf("1~9 사이의 서로 다른 %d자리 숫자를 맞혀보세요 (중도 포기: q)\n", number_digit);
 
     while (1) {
+        
+        // 디버그 모드 정답 표시
+        if (debug == true) printf("[디버그] 정답: %d\n", answer);
+
         printf("\n[%d턴] %d자리 숫자 입력: ", turn + 1, number_digit);
 
         if (scanf("%s", input) != 1) {  //사용자에게 숫자로 쓰인 문자열 스캔, 정상적으로 글자 입력 받지 못했을 경우 예외처리
