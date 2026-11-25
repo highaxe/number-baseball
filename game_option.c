@@ -23,7 +23,12 @@ void game_option(void) {
     char* strike_change = "스트라이크 옵션이 변경되었습니다.\n";
     char* ball_change = "볼 옵션이 변경되었습니다.\n";
 
+
     while (1) {
+
+        // 화면 클리어
+        system("cls");
+
         printf("\n===== 게임 옵션 =====\n");
         printf("현재 자릿수: %d\n", number_digit);
         printf("볼 숨기기: %s\n", hide_ball ? "ON" : "OFF");

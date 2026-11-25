@@ -59,6 +59,10 @@
 int result_screen(int playmod, int number, bool result, int turn, int time_sec) {
 
 
+    // 화면 클리어
+    system("cls");
+
+
     printf(GRAY "------------------------------\n" RESET);
     
     // 싱글 플레이 모드
