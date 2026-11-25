@@ -24,7 +24,10 @@ void single_play_mode(void) {
     generate_answer(number_digit, &answer);  //정답 난수 생성(FR_003)
 
     time_t start_time = time(NULL);   // 게임 시작 시각 기록
-
+    
+    // 화면 클리어
+    system("cls");
+    
     printf("\n===== 싱글 플레이 모드 =====\n");
     printf("1~9 사이의 서로 다른 %d자리 숫자를 맞혀보세요 (중도 포기: q)\n", number_digit);
 

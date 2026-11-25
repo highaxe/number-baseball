@@ -31,8 +31,14 @@ int show_history() {
     FILE* fp = fopen("game_history.txt", "r");
     if (fp == NULL) {
         printf("game_history.txt fopen fail in show_history.txt\n");
+        // Enter 입력
+        printf("[Enter] 메뉴로 돌아가기\n");
+        while (getchar() != '\n');
         return 1;
     }
+    
+    // 화면 클리어
+    system("cls");
     
     // Get file's line count
     char buffer[1000];

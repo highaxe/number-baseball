@@ -26,6 +26,10 @@ void turn_limit_mode(void) {
     // 시작 시간
     time_t start_time = time(NULL);
 
+    // 화면 클리어
+    system("cls");
+    
+
     printf("\n===== 턴 제한 모드 =====\n");
     printf("최대 %d번 안에 정답을 맞혀보세요!\n", MAX_TURNS);
 
