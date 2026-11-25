@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include <windows.h>
 #include "start_screen.c"
 #include "result_screen.c"
@@ -10,7 +11,13 @@
 #include "input_validation.c"
 #include "save_history.c"
 #include "turn_limit.c"
+#include "show_history.c"
 
+/*
+Debug mode (게임 시 정답 보이게 하기)
+true - 디버그 모드
+*/
+bool debug = true;
 
 int main() {
 	

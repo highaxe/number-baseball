@@ -7,26 +7,21 @@
 #define MAX_TURNS 10
 
 extern int number_digit;
+extern bool debug;
 
 void generate_answer(int n, int answer[]);
 bool judge(int answer, int guess, int* strike, int* ball, bool print_judge);
 int result_screen(int playmod, int number, bool result, int turn, int time_sec);
+int save_history(time_t end_time, int playmod, int number, bool result, int turn, int time_sec);
 
 void turn_limit_mode(void) {
 
-    int answer_arr[4];
     int answer = 0;
-    int strike, ball;
     int turns_used = 0;
     bool correct = false;
 
     // 정답 숫자 생성
-    generate_answer(number_digit, answer_arr);
-
-    // 문자열 정답을 int로 변환
-    for (int i = 0; i < number_digit; i++) {
-        answer = answer * 10 + answer_arr[i];
-    }
+    generate_answer(number_digit, &answer);
 
     // 시작 시간
     time_t start_time = time(NULL);
@@ -36,6 +31,10 @@ void turn_limit_mode(void) {
 
     // 턴
     while (turns_used < MAX_TURNS) {
+
+        // 디버그 모드 정답 표시
+        if (debug == true) printf("[디버그] 정답: %d\n", answer);
+
         printf("\n남은 턴: %d\n", MAX_TURNS - turns_used);
         printf("%d자리 숫자 입력: ", number_digit);
 
@@ -60,7 +59,7 @@ void turn_limit_mode(void) {
 
         // 판정
         int guess = atoi(input);
-        correct = judge(answer, guess, &strike, &ball, true);
+        correct = judge(answer, guess, NULL, NULL, true);
         printf("\n");
 
         // 정답
@@ -70,7 +69,11 @@ void turn_limit_mode(void) {
     }
 
     // 플레이 시간
-    int time_sec = (int)difftime(time(NULL), start_time);
+    int end_time = time(NULL);
+    int time_sec = (int)difftime(end_time, start_time);
+
+    // 결과 저장
+    save_history(end_time, 3, answer, correct, turns_used, time_sec);
 
     // 결과 화면
     result_screen(3, answer, correct, turns_used, time_sec);
