@@ -22,15 +22,7 @@ void generate_answer(int digit, int* answer) {
     }
 
     for(int i=0;i<digit;i++) {
-        answer *= 10;
-        answer += numbers[i];
-    }
-
-    // 정답 생성
-    *answer = 0;
-    for (int i = 0; i < digit; i++) {
         *answer *= 10;
-        *answer += rand() % 9 + 1;
-    }
-   
+        *answer += numbers[i];
+    }   
 }
