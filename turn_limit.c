@@ -7,6 +7,7 @@
 #define MAX_TURNS 10
 
 extern int number_digit;
+extern bool debug;
 
 void generate_answer(int n, int answer[]);
 bool judge(int answer, int guess, int* strike, int* ball, bool print_judge);
@@ -33,7 +34,7 @@ void turn_limit_mode(void) {
 
         // 디버그 모드 정답 표시
         if (debug == true) printf("[디버그] 정답: %d\n", answer);
-        
+
         printf("\n남은 턴: %d\n", MAX_TURNS - turns_used);
         printf("%d자리 숫자 입력: ", number_digit);
 

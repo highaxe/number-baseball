@@ -5,6 +5,7 @@
 
 // game_option.c에 선언된 자릿수 변수 참조
 extern int number_digit;
+extern bool debug;
 
 //외부 모듈 함수를 선언
 void generate_answer(int n, int answer[]);
@@ -28,7 +29,7 @@ void single_play_mode(void) {
     printf("1~9 사이의 서로 다른 %d자리 숫자를 맞혀보세요 (중도 포기: q)\n", number_digit);
 
     while (1) {
-        
+
         // 디버그 모드 정답 표시
         if (debug == true) printf("[디버그] 정답: %d\n", answer);
 

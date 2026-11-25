@@ -13,7 +13,11 @@
 #include "turn_limit.c"
 #include "show_history.c"
 
-bool debug = false;
+/*
+Debug mode (게임 시 정답 보이게 하기)
+true - 디버그 모드
+*/
+bool debug = true;
 
 int main() {
 	
@@ -21,7 +25,6 @@ int main() {
 	// 한글 깨짐 제거
 	SetConsoleOutputCP(CP_UTF8);
 	
-
 	menu();
 
 	return 0;
