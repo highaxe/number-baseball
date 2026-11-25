@@ -2,8 +2,10 @@
 #include<stdlib.h>
 #include<time.h>
 
-void generate_answer(int n, int answer[]) {
-    static int initialized = 0;
+static int initialized = 0;
+
+void generate_answer(int digit, int* answer) {
+    
 
     if(initialized==0) {
         srand((unsigned int)time(NULL));
@@ -20,7 +22,9 @@ void generate_answer(int n, int answer[]) {
         numbers[j]=temp;
     }
 
-    for(int i=0;i<n;i++) {
-        answer[i]=numbers[i];
+    for(int i=0;i<digit;i++) {
+        answer *= 10;
+        answer += numbers[i];
     }
+
 }
